@@ -1,0 +1,112 @@
+{% extends "ui/base.html" %}
+{% block title %}Statistiken – PersonalDartCoach{% endblock %}
+{% block header %}📊 Statistiken{% endblock %}
+
+{% block content %}
+<div class="space-y-6">
+  <!-- Stats Overview -->
+  <div class="stat-card rounded-2xl p-6 shadow-lg text-center relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-400 to-indigo-500 opacity-10 rounded-full -mr-16 -mt-16"></div>
+    <div class="relative z-10">
+      <div class="w-16 h-16 bg-purple-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+        </svg>
+      </div>
+      <h3 class="text-lg font-bold text-gray-800 mb-2">Deine Dart-Statistiken</h3>
+      <p class="text-sm text-gray-600">Detaillierte Übersicht deiner Würfe und Spielergebnisse</p>
+    </div>
+  </div>
+
+  <!-- Game Data Table -->
+  <div class="stat-card rounded-2xl shadow-lg overflow-hidden">
+    <div class="bg-gradient-to-r from-gray-50 to-gray-100 px-6 py-4 border-b">
+      <h3 class="font-bold text-gray-800 flex items-center">
+        <div class="w-8 h-8 bg-indigo-100 rounded-full mr-3 flex items-center justify-center">
+          <svg class="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+          </svg>
+        </div>
+        Spieldaten
+      </h3>
+    </div>
+    
+    <div class="overflow-x-auto">
+      <table class="min-w-full text-sm">
+        <thead class="bg-gradient-to-r from-indigo-50 to-purple-50">
+          <tr>
+            <th class="px-4 py-3 text-left font-semibold text-indigo-800">Runde</th>
+            <th class="px-4 py-3 text-left font-semibold text-indigo-800">Spieler</th>
+            <th class="px-4 py-3 text-left font-semibold text-indigo-800">Würfe</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100">
+          <tr class="hover:bg-gray-50 transition-colors duration-200">
+            <td class="px-4 py-3 font-medium text-gray-900">1</td>
+            <td class="px-4 py-3">
+              <div class="flex items-center">
+                <div class="w-6 h-6 bg-blue-100 rounded-full mr-2 flex items-center justify-center">
+                  <span class="text-xs font-bold text-blue-600">J</span>
+                </div>
+                <span class="text-gray-800 font-medium">JUSTIN0501</span>
+              </div>
+            </td>
+            <td class="px-4 py-3">
+              <div class="flex space-x-1">
+                <span class="px-2 py-1 bg-green-100 text-green-800 rounded text-xs font-medium">T12</span>
+                <span class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded text-xs font-medium">5</span>
+                <span class="px-2 py-1 bg-red-100 text-red-800 rounded text-xs font-medium">1</span>
+              </div>
+            </td>
+          </tr>
+          <!-- More sample rows for better demo -->
+          <tr class="hover:bg-gray-50 transition-colors duration-200">
+            <td class="px-4 py-3 font-medium text-gray-900">2</td>
+            <td class="px-4 py-3">
+              <div class="flex items-center">
+                <div class="w-6 h-6 bg-green-100 rounded-full mr-2 flex items-center justify-center">
+                  <span class="text-xs font-bold text-green-600">P</span>
+                </div>
+                <span class="text-gray-800 font-medium">PLAYER2</span>
+              </div>
+            </td>
+            <td class="px-4 py-3">
+              <div class="flex space-x-1">
+                <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs font-medium">20</span>
+                <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs font-medium">18</span>
+                <span class="px-2 py-1 bg-green-100 text-green-800 rounded text-xs font-medium">T20</span>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Quick Actions -->
+  <div class="grid grid-cols-2 gap-4">
+    <a href="{{ url_for('ui.import_page') }}" class="card-button bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl p-4 text-center shadow-sm">
+      <div class="w-8 h-8 bg-orange-600 rounded-full mx-auto mb-2 flex items-center justify-center">
+        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"></path>
+        </svg>
+      </div>
+      <p class="text-sm font-medium text-orange-800">Mehr Daten laden</p>
+    </a>
+    
+    <a href="{{ url_for('ui.dashboard') }}" class="card-button bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-4 text-center shadow-sm">
+      <div class="w-8 h-8 bg-blue-600 rounded-full mx-auto mb-2 flex items-center justify-center">
+        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+        </svg>
+      </div>
+      <p class="text-sm font-medium text-blue-800">Zum Dashboard</p>
+    </a>
+  </div>
+
+  <!-- Info Card -->
+  <div class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-4 text-center">
+    <p class="text-sm text-indigo-700">📈 <strong>Hinweis:</strong> Lade mehr Statistiken hoch, um detailliertere Analysen zu erhalten!</p>
+  </div>
+</div>
+{% endblock %}

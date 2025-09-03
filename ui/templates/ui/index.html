@@ -1,0 +1,84 @@
+{% extends "ui/base.html" %}
+{% block title %}Home – PersonalDartCoach{% endblock %}
+{% block header %}🎯 PersonalDartCoach{% endblock %}
+
+{% block content %}
+<div class="space-y-6">
+  <!-- Welcome Message -->
+  <div class="text-center mb-8">
+    <h2 class="text-lg text-gray-600 mb-2">Willkommen bei deinem</h2>
+    <p class="text-3xl font-bold text-gray-800">Dart Coach</p>
+    <p class="text-sm text-gray-500 mt-2">Verbessere dein Spiel mit personalisierten Statistiken</p>
+  </div>
+
+  <!-- Navigation Cards -->
+  <div class="grid grid-cols-2 gap-4">
+    <a href="{{ url_for('ui.import_page') }}" class="card-button rounded-2xl p-6 bg-white shadow-lg flex flex-col items-center text-center group relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-orange-400 to-pink-500 opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
+      <div class="icon-bounce w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mb-3 group-hover:bg-orange-200 transition-colors duration-300">
+        <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"></path>
+        </svg>
+      </div>
+      <span class="font-semibold text-gray-800 text-sm">Statistik</span>
+      <span class="font-semibold text-gray-800 text-sm">importieren</span>
+      <span class="text-xs text-gray-500 mt-1">Daten hochladen</span>
+    </a>
+
+    <a href="{{ url_for('ui.dashboard') }}" class="card-button rounded-2xl p-6 bg-white shadow-lg flex flex-col items-center text-center group relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-500 opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
+      <div class="icon-bounce w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-3 group-hover:bg-blue-200 transition-colors duration-300">
+        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+        </svg>
+      </div>
+      <span class="font-semibold text-gray-800 text-sm">Dashboard</span>
+      <span class="font-semibold text-gray-800 text-sm">anzeigen</span>
+      <span class="text-xs text-gray-500 mt-1">Übersicht</span>
+    </a>
+
+    <a href="{{ url_for('ui.training') }}" class="card-button rounded-2xl p-6 bg-white shadow-lg flex flex-col items-center text-center group relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-green-400 to-teal-500 opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
+      <div class="icon-bounce w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-3 group-hover:bg-green-200 transition-colors duration-300">
+        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+        </svg>
+      </div>
+      <span class="font-semibold text-gray-800 text-sm">Trainings-</span>
+      <span class="font-semibold text-gray-800 text-sm">plan</span>
+      <span class="text-xs text-gray-500 mt-1">Verbesserung</span>
+    </a>
+
+    <a href="{{ url_for('ui.stats') }}" class="card-button rounded-2xl p-6 bg-white shadow-lg flex flex-col items-center text-center group relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-purple-400 to-indigo-500 opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
+      <div class="icon-bounce w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-3 group-hover:bg-purple-200 transition-colors duration-300">
+        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+        </svg>
+      </div>
+      <span class="font-semibold text-gray-800 text-sm">Statistiken</span>
+      <span class="font-semibold text-gray-800 text-sm">aufrufen</span>
+      <span class="text-xs text-gray-500 mt-1">Auswertung</span>
+    </a>
+  </div>
+
+  <!-- Feature Highlights -->
+  <div class="mt-8 p-4 bg-white rounded-xl shadow-sm">
+    <h3 class="font-semibold text-gray-800 mb-3 text-center">✨ Features</h3>
+    <div class="grid grid-cols-3 gap-3 text-center">
+      <div class="p-2">
+        <div class="w-8 h-8 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full mx-auto mb-1"></div>
+        <p class="text-xs text-gray-600">Statistik Import</p>
+      </div>
+      <div class="p-2">
+        <div class="w-8 h-8 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full mx-auto mb-1"></div>
+        <p class="text-xs text-gray-600">Live Dashboard</p>
+      </div>
+      <div class="p-2">
+        <div class="w-8 h-8 bg-gradient-to-br from-green-400 to-green-600 rounded-full mx-auto mb-1"></div>
+        <p class="text-xs text-gray-600">Training Plan</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
