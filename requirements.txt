@@ -1,0 +1,11 @@
+flask
+requests
+gunicorn
+flask-cors
+flask
+flask-cors
+gunicorn
+requests
+openai
+reportlab
+werkzeug
